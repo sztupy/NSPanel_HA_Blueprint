@@ -9,9 +9,18 @@ namespace nspanel_ha_blueprint {
         int major1 = 0, minor1 = 0;
         int major2 = 0, minor2 = 0;
 
+        if (!version1)
+            return false;
+
+        if (!version2)
+            return false;
+
         // Parse the version strings into major and minor numbers
-        sscanf(version1, "%d.%d", &major1, &minor1);
-        sscanf(version2, "%d.%d", &major2, &minor2);
+        if (sscanf(version1, "%d.%d", &major1, &minor1) != 2)
+            return false;
+
+        if (sscanf(version2, "%d.%d", &major2, &minor2) != 2)
+            return false;
 
         // Compare the parsed major and minor numbers
         return (major1 == major2) && (minor1 == minor2);
