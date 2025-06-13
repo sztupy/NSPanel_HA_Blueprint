@@ -50,8 +50,8 @@ esphome:
 external_components:
   - source:
       type: git
-      url: https://github.com/Blackymas/NSPanel_HA_Blueprint
-      ref: v${version}
+      url: https://github.com/sztupy/NSPanel_HA_Blueprint
+      ref: main
     components:
       - nspanel_ha_blueprint
 
