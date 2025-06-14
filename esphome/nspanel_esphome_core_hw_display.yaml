@@ -115,8 +115,8 @@ display:
   - id: disp1
     platform: nextion
     command_spacing: 5ms
-    # max_commands_per_loop: 15  # add when PR#8972 is merged in ESPHome
-    # max_queue_size: 20  # add when PR#8976 is merged in ESPHome
+    max_commands_per_loop: 15  # add when PR#8972 is merged in ESPHome
+    max_queue_size: 20  # add when PR#8976 is merged in ESPHome
 
     on_buffer_overflow:
       then:
