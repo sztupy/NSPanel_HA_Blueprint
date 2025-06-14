@@ -30,9 +30,6 @@ binary_sensor:
     pin:
       number: ${GPIO_BUTTON_LEFT_PIN}
       inverted: ${GPIO_BUTTON_LEFT_INVERTED}
-    on_state:
-      then:
-        - button.press: nspanel_factory_reset
     on_press:
       then:
         - lambda: |-
@@ -63,9 +60,6 @@ binary_sensor:
     pin:
       number: ${GPIO_BUTTON_RIGHT_PIN}
       inverted: ${GPIO_BUTTON_RIGHT_INVERTED}
-    on_state:
-      then:
-        - button.press: nspanel_factory_reset
     on_press:
       then:
         - lambda: |-
