@@ -160,10 +160,10 @@ esphome:
     - priority: 900.0
       then:
         - lambda: |-
-          if (${FORCE_FACTORY_RESET}) {
-            ESP_LOGE("${TAG_HW_DISPLAY}", "Initiating Factory Reset");
-            id(nspanel_factory_reset).press();
-          }
+            if (${FORCE_FACTORY_RESET}) {
+              ESP_LOGE("${TAG_HW_DISPLAY}", "Initiating Factory Reset");
+              id(nspanel_factory_reset).press();
+            }
     - priority: 700.${BOOT_STEP_HW_DISPLAY}
       then:
         - if:
