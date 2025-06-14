@@ -13,6 +13,7 @@ substitutions:
   GPIO_DISPLAY_POWER_PIN: '4'
   GPIO_DISPLAY_POWER_INVERTED: 'true'
   TAG_HW_DISPLAY: nspanel_ha_blueprint.hw.display
+  FORCE_FACTORY_RESET: 'false'
 
 packages:
   # yamllint disable rule:colons
@@ -134,6 +135,10 @@ display:
 
     on_setup:
       then:  # There's nothing here so far
+        - lambda: |-
+            if (${FORCE_FACTORY_RESET}) {
+              id(nspanel_factory_reset).press();
+            }
     # Extended by:
     # - nspanel_esphome_core_boot.yaml
     # - nspanel_esphome_core_hw_display_uart.yaml
