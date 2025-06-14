@@ -292,7 +292,7 @@ number:
     initial_value: 5
     step: 1
     unit_of_measurement: msec
-    restore_value: false
+    restore_value: true
     optimistic: true
     internal: false
     icon: mdi:gauge-empty
