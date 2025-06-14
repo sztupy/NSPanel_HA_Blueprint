@@ -20,7 +20,6 @@ substitutions:
   GPIO_BUTTON_RIGHT_PIN: '27'
   GPIO_BUTTON_RIGHT_INVERTED: 'true'
   TAG_HW_BUTTONS: nspanel_ha_blueprint.hw.buttons
-  FORCE_FACTORY_RESET: 'false'
 
 binary_sensor:
   - id: left_button  # LEFT BUTTON BELOW DISPLAY TO TOGGLE RELAY
@@ -31,12 +30,6 @@ binary_sensor:
     pin:
       number: ${GPIO_BUTTON_LEFT_PIN}
       inverted: ${GPIO_BUTTON_LEFT_INVERTED}
-    on_state:
-      if:
-        condition:
-          - lambda: return ${FORCE_FACTORY_RESET};
-        then:
-          - button.press: nspanel_factory_reset
     on_press:
       then:
         - lambda: |-
