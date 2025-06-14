@@ -135,11 +135,6 @@ display:
 
     on_setup:
       then:  # There's nothing here so far
-        - lambda: |-
-            if (${FORCE_FACTORY_RESET}) {
-              ESP_LOGE("${TAG_HW_DISPLAY}", "Initiating Factory Reset");
-              id(nspanel_factory_reset).press();
-            }
     # Extended by:
     # - nspanel_esphome_core_boot.yaml
     # - nspanel_esphome_core_hw_display_uart.yaml
@@ -162,6 +157,13 @@ esphome:
     build_flags:
       - -D NSPANEL_HA_BLUEPRINT_CORE_HW_DISPLAY
   on_boot:
+    - priority: 900.0
+      then:
+        - lambda: |-
+          if (${FORCE_FACTORY_RESET}) {
+            ESP_LOGE("${TAG_HW_DISPLAY}", "Initiating Factory Reset");
+            id(nspanel_factory_reset).press();
+          }
     - priority: 700.${BOOT_STEP_HW_DISPLAY}
       then:
         - if:
