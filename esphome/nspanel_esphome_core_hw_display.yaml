@@ -228,7 +228,7 @@ number:
     max_value: 100
     initial_value: 100
     step: 1
-    restore_value: true
+    restore_value: false
     optimistic: true
     internal: false
     device_class: illuminance
@@ -249,7 +249,7 @@ number:
     max_value: 100
     initial_value: 25
     step: 1
-    restore_value: true
+    restore_value: false
     optimistic: true
     internal: false
     device_class: illuminance
@@ -270,7 +270,7 @@ number:
     max_value: 100
     initial_value: 0
     step: 1
-    restore_value: true
+    restore_value: false
     optimistic: true
     internal: false
     device_class: illuminance
@@ -292,7 +292,7 @@ number:
     initial_value: 5
     step: 1
     unit_of_measurement: msec
-    restore_value: true
+    restore_value: false
     optimistic: true
     internal: false
     icon: mdi:gauge-empty
