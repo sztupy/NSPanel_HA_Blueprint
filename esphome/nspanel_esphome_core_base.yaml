@@ -79,7 +79,7 @@ script:
 
   - id: !extend boot_sequence
     then:
-      - switch.turn_on: nspanel_factory_reset
+      - button.press: nspanel_factory_reset
       - lambda: |-
           boot_progress->execute(${BOOT_STEP_BASE});
 
