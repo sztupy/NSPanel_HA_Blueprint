@@ -39,7 +39,7 @@ script:
   - id: !extend button_click_short
     then:
       - lambda: |-
-          if (is_button_in_mask(button_id, PageButtonsMaskConfirm)) {
+          if (is_button_in_mask(button_id - 1, PageButtonsMaskConfirm)) {
             goto_page_id->execute(${PAGE_ID_CONFIRM}, true);
             set_component_value->execute(${PAGE_ID_CONFIRM}, "page_id", page_id);
             set_component_text->execute(${PAGE_ID_CONFIRM}, "page_name", page_names[page_id]);
